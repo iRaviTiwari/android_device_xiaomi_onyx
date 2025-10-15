@@ -1,0 +1,29 @@
+# Inherit vendor blobs
+$(call inherit-product, vendor/xiaomi/onyx/vendor.mk)
+# Exclude AuthGraph/DICE test packages (not needed for device builds)
+# Exclude AVF/AuthGraph/Microdroid tests and packages
+PRODUCT_PACKAGES := $(filter-out \
+    framework-virtualization \
+    MicrodroidHostTestCases \
+    libauthgraph_core_test \
+    libauthgraph_boringssl_test \
+    libauthgraph_wire_test \
+    , $(PRODUCT_PACKAGES))
+
+# Exclude AVF/generic image targets
+PRODUCT_PACKAGES -= aosp_shared_system_image
+
+# Exclude Trusty LK ELF gen targets (they drag virtualization backends)
+PRODUCT_PACKAGES -= trusty-arm64.lk.elf.gen
+PRODUCT_PACKAGES -= trusty-x86_64.lk.elf.gen
+PRODUCT_PACKAGES -= trusty-arm64-virt-test-debug.lk.elf.gen
+PRODUCT_PACKAGES -= trusty-x86_64-test.lk.elf.gen
+
+# --- Nuke AVF / Trusty / generic image pull-ins ---
+PRODUCT_PACKAGES -= aosp_shared_system_image
+PRODUCT_PACKAGES -= AvfRkpdAppIntegrationTests
+PRODUCT_PACKAGES -= trusty-arm64.lk.elf.gen
+PRODUCT_PACKAGES -= trusty-x86_64.lk.elf.gen
+PRODUCT_PACKAGES -= trusty-arm64-virt-test-debug.lk.elf.gen
+PRODUCT_PACKAGES -= trusty-x86_64-test.lk.elf.gen
+# ---------------------------------------------------
