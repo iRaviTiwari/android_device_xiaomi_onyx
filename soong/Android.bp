@@ -3,14 +3,5 @@ package {
 }
 
 cc_defaults {
-    name: "avf_build_flags_cc",
-}
-
-rust_defaults {
-    name: "avf_build_flags_rust",
-}
-
-cc_defaults {
     name: "libavf_cc_flags",
 }
-
