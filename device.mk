@@ -10,8 +10,8 @@ $(call inherit-product, vendor/xiaomi/onyx/vendor.mk)
 # Device identifier
 PRODUCT_DEVICE := onyx
 PRODUCT_NAME := lineage_onyx
-PRODUCT_BRAND := Xiaomi
-PRODUCT_MODEL := Redmi Turbo 4 Pro
+PRODUCT_BRAND := POCO
+PRODUCT_MODEL := POCO F7
 PRODUCT_MANUFACTURER := Xiaomi
 
 # Exclude AuthGraph/DICE test packages (not needed for device builds)
