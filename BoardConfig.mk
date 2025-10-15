@@ -1,4 +1,5 @@
 # BoardConfig.mk for Xiaomi Poco F7 (Onyx)
+WITH_DEXPREOPT := false
 
 # Architecture
 TARGET_ARCH := arm64
