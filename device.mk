@@ -1,7 +1,20 @@
+# device/xiaomi/onyx/device.mk
+
+# Inherit from core product definitions
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+
 # Inherit vendor blobs
 $(call inherit-product, vendor/xiaomi/onyx/vendor.mk)
+
+# Device identifier
+PRODUCT_DEVICE := onyx
+PRODUCT_NAME := lineage_onyx
+PRODUCT_BRAND := Xiaomi
+PRODUCT_MODEL := Redmi Turbo 4 Pro
+PRODUCT_MANUFACTURER := Xiaomi
+
 # Exclude AuthGraph/DICE test packages (not needed for device builds)
-# Exclude AVF/AuthGraph/Microdroid tests and packages
 PRODUCT_PACKAGES := $(filter-out \
     framework-virtualization \
     MicrodroidHostTestCases \
