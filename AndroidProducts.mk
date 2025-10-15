@@ -1,10 +1,10 @@
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_onyx.mk:lineage_onyx
+$(LOCAL_DIR)/lineage_onyx.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_onyx-ap2a-user \
-    lineage_onyx-ap2a-userdebug \
-    lineage_onyx-ap2a-eng
+lineage_onyx-ap2a-user \
+lineage_onyx-ap2a-userdebug \
+lineage_onyx-ap2a-eng
 
 #PRODUCT_MAKEFILES := \
 #    $(LOCAL_DIR)/aosp_onyx.mk
