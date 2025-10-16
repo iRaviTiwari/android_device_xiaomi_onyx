@@ -1,7 +1,23 @@
+# device/xiaomi/onyx/device.mk
+BUILD_USERNAME := Ravi
+BUILD_HOSTNAME := RaviBuild
+BUILD_DISPLAY_ID := LineageOS_by_iRaviTiwari
+
+# Inherit from core product definitions
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+
 # Inherit vendor blobs
 $(call inherit-product, vendor/xiaomi/onyx/vendor.mk)
+
+# Device identifier
+PRODUCT_DEVICE := onyx
+PRODUCT_NAME := lineage_onyx
+PRODUCT_BRAND := POCO
+PRODUCT_MODEL := POCO F7
+PRODUCT_MANUFACTURER := Xiaomi
+
 # Exclude AuthGraph/DICE test packages (not needed for device builds)
-# Exclude AVF/AuthGraph/Microdroid tests and packages
 PRODUCT_PACKAGES := $(filter-out \
     framework-virtualization \
     MicrodroidHostTestCases \
@@ -27,3 +43,4 @@ PRODUCT_PACKAGES -= trusty-x86_64.lk.elf.gen
 PRODUCT_PACKAGES -= trusty-arm64-virt-test-debug.lk.elf.gen
 PRODUCT_PACKAGES -= trusty-x86_64-test.lk.elf.gen
 # ---------------------------------------------------
+PRODUCT_PACKAGES -= webview
